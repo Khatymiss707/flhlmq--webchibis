@@ -1,0 +1,15 @@
+{
+  "name": "federation-des-locataires--web-chibis",
+  "version": "1.0.0",
+  "description": "Projet de session pour le cours de [TIM - Projet Web 5](https://tim-montmorency.com/timdoc/582-518MO/projet/) au Collège Montmorency",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "web chibis",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}

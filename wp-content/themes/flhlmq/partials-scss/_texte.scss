@@ -1,0 +1,39 @@
+@font-face {
+    src: url("./medias/font/Montserrat/Montserrat.ttf") format("truetype");
+    font-family: "montserrat";
+}
+@font-face {
+    src: url("./medias/font/Merriweather_Sans/MerriweatherSans.ttf") format("truetype");
+    font-family: "merriweather";
+}
+h1 {
+    font-family: "merriweather";
+    font-weight: bold;
+    color: var(--blanc);
+}
+h2 {
+    font-family: "merriweather";
+    font-weight: bold;
+    color: var(--blanc); 
+}
+h3{
+    font-family: "montserrat";
+    font-weight: medium;
+    color: var(--blanc);
+    font-size: 24px;
+}
+p {
+    font-family: "montserrat";
+    font-weight: 600;
+    color: var(--blanc);
+}
+.credit {
+    font-family: "montserrat";
+    font-weight: 300;
+    color: var(--blanc);
+}
+a {
+    font-family: "montserrat";
+    font-weight: 300;
+    color: var(--blanc);
+}

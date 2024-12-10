@@ -1,0 +1,264 @@
+@use "couleurs";
+@use "boutons";
+@use "sass:color";
+
+@media screen and (max-width: 375px) {
+    .footer {
+        background-color: color.adjust(#1C7293, $blackness: 15%);
+        width: 100%;
+        color: var(--blanc);
+        display: grid;
+        gap: 10px;    
+        .lien {
+            a {
+                &:hover {
+                    color: var(--pomme-verte);
+                }
+            }
+        }
+        & .titre_footer {
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        & .icones_reseaux {
+            text-align: center;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto;
+        }
+        & .quebec {
+            text-align: center;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        & .cnl {
+            text-align: center;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        & .rohq {
+            text-align: center;
+            grid-column-start: 1;
+            grid-column-end: 3;
+
+        }
+        & .frapru {
+            text-align: center;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        & .logo {
+            margin-top: 10px;
+            text-align: center;
+
+            & img {
+                width: 100%;
+            }
+        }
+        p {
+            font-size: 14px;
+            grid-column-start: 1;
+            grid-column-end: 3;
+            text-align: center;
+        }
+        & .lien {
+            text-align: center;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        & .credit {
+            margin-top: 10px;
+            text-align: center;
+            font-size: 10px;
+            grid-column-start: 1;
+            grid-column-end: 2;
+            padding-bottom: 10px;
+        }
+        .joindre {
+            margin-top: 20px;
+            margin-bottom: 0px;
+        }
+        .partenaires {
+            font-size: 16px;
+            margin-top: 20px;
+        }
+        .membership {
+            text-align: center;
+            grid-column-start: 1;
+            grid-column-end: 3;
+        }
+        button {
+            &.membre_footer {
+                padding: 10px;
+                margin-top: 20px;
+                width: 55%;
+                height: 60px;
+                font-size: 12px;
+                margin-bottom: 20px;
+            }
+        }
+    }
+}
+@media screen and (min-width: 375px) and (max-width: 768px) {
+    .footer {
+        width: 100%;
+        padding: 20px;
+        background-color: color.adjust(#1C7293, $blackness: 15%);
+        color: var(--blanc);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: repeat(auto-fill);
+            .column1 {
+                width: 100%;
+            .logo {
+                width: 100%;
+                transform: scale(0.9);
+                img{
+                    width: 100%; 
+                }
+            }
+            .lien {
+                a {
+                    &:hover {
+                        color: var(--pomme-verte);
+                    }
+                }
+            }
+        }
+        .columns2 {
+            width: 50%;
+            .partners {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                & .quebec {
+                    position: relative;
+                    transform: scale(0.7);
+                    text-align: center;
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                }
+                & .frapru {
+                    position: relative;
+                    transform: scale(0.7);
+                    text-align: center;
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                }
+                & .cnl {
+                    position: relative;
+                    transform: scale(0.7);
+                    text-align: center;
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                }
+                & .rohq {
+                    position: relative;
+                    text-align: left;
+                    text-align: center;
+                    transform: scale(0.7);
+                    grid-column-start: 1;
+                    grid-column-end: 3;
+                }
+
+            }                
+            & .membership {
+                    display: block;
+                    margin: auto;
+                    height: 100%;
+                    width: 50px;
+                    grid-column: 3/3;
+                    grid-row: 3/4;
+                    text-transform: uppercase;
+                    font-size: 32px;
+            }
+        }   
+    }
+}
+@media screen and (min-width: 768px) {
+    .logo {
+        transform: scale(0.6);
+    }
+    .footer {
+        width: 100%;
+        padding:20px;
+        background-color: color.adjust(#1C7293, $blackness: 15%);
+        color: var(--blanc);
+        display: grid;
+        grid-template-columns: repeat(auto-fit);
+        grid-template-rows: repeat(auto-fit);
+        gap: 5px;
+        .column1 {
+            grid-column: 1/2;
+            padding-left: 5px;
+            padding-top: 5px;
+            & .logo {
+                width: 100%;
+                transform: scale(0.9);
+                img{
+                    width: 100%; 
+                    }
+            }
+            .icones_reseaux {
+                display: grid;
+                grid-template-columns: 60px 60px;
+                grid-template-rows: auto;
+                .youtube {
+                    grid-column: 1/1;
+                }
+                .facebook {
+                    grid-column: 2/2;
+                }
+            }
+        }
+        .column2 {
+            grid-column: 2/3;
+            padding-right: 5px;
+            padding-top: 5px;
+            .partners {
+                display: grid;
+                grid-template-columns: auto auto;
+                grid-template-rows: auto auto;
+                .partenaires{
+                    grid-column: 1/3;
+                    text-align: center;
+                    margin-bottom: 2%;
+                }
+                .quebec {
+                    grid-column: 1/2;
+                    grid-row: 2/3;
+                    text-align: center;
+                }
+                .frapru {
+                    grid-column: 2/3;
+                    grid-row: 2/3;
+                    text-align: center;
+                }
+                .cnl {
+                    grid-column: 1/2;
+                    grid-row: 3/4;
+                    text-align: center;
+                }
+                .rohq {
+                    grid-column: 2/3;
+                    grid-row: 3/4;
+                    text-align: center;
+                }
+            }  
+            .joindre {
+                text-align: center;
+                grid-column: 3/3;
+                grid-row: 3/4;
+                text-align: center;  
+                margin-top: 4%;                
+            }
+            .membership {
+                text-align: center;
+                grid-column: 3/3;
+                grid-row: 3/4;
+                text-align: center; 
+            }
+        } 
+    }
+}

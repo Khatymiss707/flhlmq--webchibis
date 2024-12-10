@@ -1,0 +1,15 @@
+@use "couleurs";
+
+.bloc-articles-similaires {
+    background-color: var(--pomme-verte);
+    color: var(--noir);
+}
+
+h2 {
+    color: var(--pomme-verte);
+}
+
+a {
+    //background-color: var(--bleu-calypso);
+    color: var(--blanc);
+}

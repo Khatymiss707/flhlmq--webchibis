@@ -1,0 +1,163 @@
+@use "couleurs";
+@use "texte";
+@use "sass:color";
+
+.nav {
+  .navbar {
+    ul {
+      padding: 0;
+      margin: 0;
+      justify-content: space-evenly;
+    }
+
+    background-color: var(--bleu-paisible);
+    padding: 20px 0;
+  }
+
+  .nav_menu {
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    //justify-content: flex-start;
+
+
+    .autre {
+      margin-right: 0;
+
+
+
+      .loupe {
+        margin-right: 25px;
+        width: 25px;
+      }
+
+      select {
+        font-weight: 500;
+        padding: 5px;
+        font-size: 100%;
+        padding-right: 20px;
+        color: var(--blanc);
+        border: 2px var(--blanc) solid;
+        background-color: transparent;
+      }
+    }
+
+    li {
+      list-style: none;
+
+      a {
+        font-size: 100%;
+        text-decoration: none;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 500;
+
+        &.nav-link {
+          padding-bottom: 1vh;
+        }
+
+        &:hover {
+          border-bottom: solid 3px white;
+        }
+      }
+    }
+
+    .right_side_nav {
+      display: flex;
+      justify-content: end;
+
+    }
+  }
+
+  .hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  .bar {
+    display: block;
+    width: 25px;
+    height: 5px;
+    margin: 5px auto;
+    transition: all 1s ease;
+    background-color: white;
+  }
+
+}
+
+
+@media screen and (min-width: 375px) and (max-width: 640px) {
+  .nav {
+    .navbar {
+
+      .hamburger {
+        display: block;
+
+        &.active .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        &.active .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        &.active .bar:nth-child(3) {
+          transform: translateY(-12px) rotate(-45deg);
+        }
+      }
+
+      .nav_menu {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.1s ease;
+
+        &.active {
+          display: flex;
+          flex-direction: column;
+          opacity: 1;
+        }
+
+      }
+
+    }
+  }
+}
+
+//nav version mobile
+@media screen and (max-width: 375px) {
+  .nav {
+    .navbar {
+
+      .hamburger {
+        display: block;
+
+        &.active .bar:nth-child(2) {
+          opacity: 0;
+        }
+
+        &.active .bar:nth-child(1) {
+          transform: translateY(8px) rotate(45deg);
+        }
+
+        &.active .bar:nth-child(3) {
+          transform: translateY(-12px) rotate(-45deg);
+        }
+      }
+
+      .nav_menu {
+        display: none;
+        opacity: 0;
+        transition: opacity 0.1s ease;
+
+        &.active {
+          display: flex;
+          flex-direction: column;
+          opacity: 1;
+        }
+
+      }
+
+    }
+  }
+}

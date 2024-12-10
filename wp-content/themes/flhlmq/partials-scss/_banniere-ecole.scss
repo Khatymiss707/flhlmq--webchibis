@@ -1,0 +1,118 @@
+@use "couleurs";
+@use "sass:color";
+
+
+@media screen and (max-width: 375px) {
+    .banniere {
+        background-color: var(--bleu-calypso);
+        padding: 4%;
+        display: grid;
+        text-align: center;
+        gap: 10px;
+
+        button {
+
+            &.fermer {
+                margin-top: 10px;
+                padding: 1em;
+                width: 90vw;
+                border-radius: 0.8em;
+                font-size: 3vw;
+            }
+
+            &.visiter {
+                padding: 1em;
+                width: 90vw;
+                border-radius: 0.8em;
+                font-size: 3vw;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            margin-bottom: 0px;
+        }
+    }
+}
+
+@media screen and (min-width: 375px) and (max-width: 768px) {
+
+    .banniere {
+        background-color: var(--bleu-calypso);
+        padding: 2%;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 7px;
+
+        .banniere_btn {
+            display: flex;
+            align-items: center;
+            display: grid;
+            gap: 7px;
+            grid-template-columns: auto auto;
+
+            button {
+
+                &.fermer {
+                    padding: 1em;
+                    width: 12vw;
+                    border-radius: 0.8em;
+                    font-size: 1.4vw;
+                }
+
+                &.visiter {
+                    padding: 1em;
+                    width: 12vw;
+                    border-radius: 0.8em;
+                    font-size: 1.4vw;
+                }
+            }
+        }
+
+
+        p {
+            margin: auto 0;
+            font-size: 14px;
+        }
+    }
+}
+
+@media screen and (min-width: 769px) {
+
+    .banniere {
+        background-color: var(--bleu-calypso);
+        padding: 1% 2%;
+        display: grid;
+        grid-template-columns: auto auto auto;
+        gap: 7px;
+
+        .banniere_btn {
+            display: flex;
+            align-items: center;
+            display: grid;
+            gap: 7px;
+            grid-template-columns: auto auto;
+
+            button {
+
+                &.fermer {
+                    padding: 0.7em;
+                    width: 12vw;
+                    border-radius: 0.8em;
+                }
+
+                &.visiter {
+                    padding: 0.7em;
+                    width: 12vw;
+                    border-radius: 0.8em;
+                }
+            }
+        }
+
+
+        p {
+            margin: auto 0;
+            font-size: 16px;
+        }
+    }
+}

@@ -1,0 +1,51 @@
+@use "couleurs";
+@use "sass:color";
+
+
+button{
+    padding: 1em;
+    width: 20vw;
+    border-radius: 35px;
+    font-family: "montserrat";
+    font-weight: bold;
+    border: none;
+    box-shadow: 5px 5px 5px color.adjust(#1C7293, $blackness: 15%);
+
+    &.voir_plus {
+        background-color: var(--vert-menthe);
+        color: var(--blanc);
+    }
+
+    &.membre_footer {
+        width: 50%;
+        height: 30%;
+        background-color: var(--pomme-verte);
+        color: var(--blanc);
+        border-radius: 35px;
+        font-size: 1.5vw;
+        grid-column: 3/5;
+        grid-row: 4/4;
+    }
+
+    &.pagination {
+        background-color: var(--gris-souris);
+        color: var(--bleu-calypso);
+    }
+    &.fermer{
+        background-color: var(--gris-souris);
+        color: var(--blanc);
+        padding: 1em;
+        width: 12vw;
+        font-size: 1vw;
+    }
+    &.visiter{
+        background-color: color.adjust(#1C7293, $blackness: 15%);
+        color: var(--blanc);
+        padding: 1em;
+        width: 12vw;
+        font-size: 1vw;
+    }
+    &.footer {
+        background-color: var(--pomme-verte);
+    }
+}
