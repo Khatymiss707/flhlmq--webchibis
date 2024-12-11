@@ -62,8 +62,6 @@ older.addEventListener("click", () => {
 
 
 //accordeon
-/*let title = document.querySelector(".accordion__item__title"); 
-let contenu = document.querySelector(".accordion__item__content--open"); 
 
 var $title = $('.title');
 var content   = '.content';
@@ -71,7 +69,7 @@ $title.click(function () {
   $(this).next(content).slideToggle();
   $(this).parent().siblings().children().next().slideUp();
   return false;
-});*/
+});
 
 
 //Page_liste_service_swiper
@@ -101,6 +99,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 
  });
+
+
 
 
 
