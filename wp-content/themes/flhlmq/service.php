@@ -15,27 +15,35 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
         <div class="swiper">
           <div class="swiper-wrapper">
               <div class="swiper-slide">
+                <!-- scf pour image dans wp -->
                 <img src="<?php the_field('swiper_image_01');?>" alt="ciel01" />
               </div>
               <div class="swiper-slide">
+                <!-- scf pour image dans wp -->
                 <img src="<?php the_field('swiper_image_02');?>" alt="ciel02" />
               </div>
               <div class="swiper-slide">
+                <!-- scf pour image dans wp -->
                 <img src="<?php the_field('swiper_image_03');?>" alt="ciel03" />
               </div>
           </div>
           <div class="swiper-pagination"></div>
           <div class="vecteur_batiment">
+            <!-- scf pour image dans wp -->
             <img class="building01" src="<?php the_field('swiper_image_01');?>" alt="" />
+            <!-- scf pour image dans wp -->
             <img class="building02" src="<?php the_field('swiper_image_02');?>" alt="" />
+            <!-- scf pour image dans wp -->
             <img class="building03" src="<?php the_field('swiper_image_03');?>" alt="" />
           </div>
         </div>
         <div class="case_transparente">
+          <!-- scf pour text dans wp -->
           <h1 class="titre"><?php the_title();?></h1>
           <div class="swiper02">
             <div class="swiper-wrapper">
 
+            <!-- wp querry -->
             <?php
               $arguments = array( // 👈 Tableau d'arguments
                 'post_type' => 'new',
@@ -47,6 +55,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
             ?>
             
               <div class="swiper-slide">
+                <!-- scf pour text dans wp -->
                 <h3 class="article_hero"><?php the_field('descriptif_one_sentence')?></h3>
               </div>
 

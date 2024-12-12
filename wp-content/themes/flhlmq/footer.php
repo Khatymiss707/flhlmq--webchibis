@@ -10,22 +10,29 @@
     <div class="column1">
         <div class="titre_footer">
             <div class="logo">
+                <!-- scf pour image dans wp -->
                 <img src="<?php the_field('footerlogo'); ?>" />
             </div>
         </div>
         <p class="address">
             <?php the_field('location'); ?>
         </p>
-        <p class="contactes"><?php the_field('phone_number'); ?></p>
+        <p class="contactes">
+            <!-- scf pour texte dans wp -->
+            <?php the_field('phone_number'); ?>
+        </p>
         <div class="lien">
+            <!-- scf pour email dans wp -->
             <a href="info@flhlmq.com"><?php the_field('email_flhlmq'); ?></a>
         </div>
         <div class="icones_reseaux">
             <div class="youtube">
+                <!-- scf pour image dans wp -->
                 <img src="<?php the_field('mediassociaux_firstlogo'); ?>" alt="youtube" />
             </div>
-			
+
             <div class="facebook">
+                <!-- scf pour image dans wp -->
                 <img src="<?php the_field('mediassociaux_secondlogo'); ?>" alt="facebook" />
             </div>
         </div>
@@ -33,30 +40,40 @@
     <div class="column2">
         <div class="partners">
             <p class="partenaires">
+                <!-- scf pour texte dans wp -->
                 <?php the_field('partners_titlepartners'); ?>
             </p>
             <div class="quebec">
+                <!-- scf pour image dans wp -->
                 <img src="<?php the_field('partners_logo'); ?>" alt="quebec" />
             </div>
             <div class="frapru">
+                <!-- scf pour image dans wp -->
                 <img src="<?php the_field('partners_secondlogo'); ?>" alt="frapru" />
             </div>
             <div class="cnl">
+                <!-- scf pour image dans wp -->
                 <img src="<?php the_field('partners_thirdlogo'); ?>" alt="cnl" />
             </div>
             <div class="rohq">
+                <!-- scf pour image dans wp -->
                 <img src="<?php the_field('partners_fourthlogo'); ?>" alt="rohq" />
             </div>
         </div>
-        <p class="joindre"><?php the_field('join_title'); ?></p>
+        <p class="joindre">
+            <!-- scf pour texte dans wp -->
+            <?php the_field('join_title'); ?>
+        </p>
         <div class="membership">
-            <button class="membre_footer"><?php the_field('buttons_btn_label'); ?></button>
+            <button class="membre_footer">
+                <!-- scf pour texte dans wp -->
+                <?php the_field('buttons_btn_label'); ?>
+            </button>
         </div>
     </div>
+    <!-- scf pour texte dans wp -->
     <p class="credit"><?php the_field('credits'); ?></p>
 </footer>
-
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <?php wp_footer(); 
 /* Espace où WordPress peut insérer des fichiers .js et autres. Par exemple pour des extensions (plugins). 
