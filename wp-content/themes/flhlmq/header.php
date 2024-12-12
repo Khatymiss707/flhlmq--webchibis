@@ -13,6 +13,7 @@
         <?php bloginfo('name'); // Affiche le nom du blog ?> |
         <?php is_front_page() ? bloginfo('description') : wp_title(''); // si nous sommes sur la page d'accueil, affichez la description à partir des paramètres du site - sinon, affichez le titre du post ou de la page. ?>
     </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <?php 
 	// Tous les .css et .js sont chargés dans le fichier functions.php
 ?>
@@ -32,10 +33,9 @@
 	?>>
 
     <header>
-
         <div class="banniere">
             <p>
-                allo
+                <?php the_field('description'); ?>
             </p>
             <div class="banniere_btn">
                 <button class="visiter">
@@ -46,6 +46,26 @@
                 </button>
             </div>
         </div>
+
+        <section class="nav">
+        <nav class="navbar">
+          <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+          </div>
+
+        <?php
+            wp_nav_menu( array(
+            'theme_location' => 'main_menu',  // Make sure you've registered the 'main-menu' location in your theme
+            'menu_class' => 'nav_menu',  // Apply Bootstrap navbar classes to the <ul>
+            'container' => 'ul',
+            'list_item_class' => 'nav-item',
+            'link_item_class' => 'nav-link',
+        ));
+        ?>
+        </nav>
+      </section>
 
     </header>
 

@@ -56,6 +56,8 @@
     <p class="credit"><?php the_field('credits'); ?></p>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
 <?php wp_footer(); 
 /* Espace où WordPress peut insérer des fichiers .js et autres. Par exemple pour des extensions (plugins). 
 	 Si vous enlevez cette fonction, vous désactiverez du même coup toutes vos extensions (plugins) 🤷. 

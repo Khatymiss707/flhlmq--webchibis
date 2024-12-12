@@ -11,6 +11,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 	while ( have_posts() ) : the_post(); 
 ?>
 	<div class="pageblanche">
+		
 		<section class="hero">
 
 			<div itemscope itemtype="https://schema.org/Nouvelle">
