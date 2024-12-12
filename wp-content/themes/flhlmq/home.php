@@ -35,14 +35,14 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
           <div class="swiper-pagination"></div>
           <!--BATIMENTS VECTEURS-->
           <div class="vecteur_batiment">
-            <img class="building01" src="<?php the_field('hero_swiper_image_01');?>" alt="" />
-            <img class="building02" src="<?php the_field('hero_swiper_image_02');?>" alt="" />
-            <img class="building03" src="<?php the_field('hero_swiper_image_03');?>" alt="" />
+            <img class="building01" src="<?php the_field('hero_building_01');?>" alt="" />
+            <img class="building02" src="<?php the_field('hero_building_02');?>" alt="" />
+            <img class="building03" src="<?php the_field('hero_building_03');?>" alt="" />
           </div>
         </div>
         <!--SWIPER 2 POUR TEXTES DES NOUVELLES-->
         <div class="case_transparente">
-          <h1 class="titre"><?php the_title();?></h1>
+          <h1 class="titre"><?php the_field('titre_site');?></h1>
           <div class="swiper02">
             <div class="swiper-wrapper">
 
@@ -195,6 +195,5 @@ else : // Si aucune page n'a été trouvée
 	get_template_part( 'partials/404' ); // Affiche partials/404.php
 endif;
 
-get_sidebar(); // Affiche le contenu de sidebar.php
 get_footer(); // Affiche footer.php 
 ?>

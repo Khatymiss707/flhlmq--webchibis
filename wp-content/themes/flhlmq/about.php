@@ -12,122 +12,71 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 	while ( have_posts() ) : the_post(); 
 ?>
 
-<section class="hero">
-        <div class="swiper">
-          <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                <!-- scf pour image dans wp -->
-                <img src="<?php the_field('swiper_image_01');?>" alt="ciel01" />
-              </div>
-              <div class="swiper-slide">
-                <!-- scf pour image dans wp -->
-                <img src="<?php the_field('swiper_image_02');?>" alt="ciel02" />
-              </div>
-              <div class="swiper-slide">
-                <!-- scf pour image dans wp -->
-                <img src="<?php the_field('swiper_image_03');?>" alt="ciel03" />
-              </div>
-          </div>
-          <div class="swiper-pagination"></div>
-          <div class="vecteur_batiment">
-            <!-- scf pour image dans wp -->
-            <img class="building01" src="<?php the_field('swiper_image_01');?>" alt="" />
-            <!-- scf pour image dans wp -->
-            <img class="building02" src="<?php the_field('swiper_image_02');?>" alt="" />
-            <!-- scf pour image dans wp -->
-            <img class="building03" src="<?php the_field('swiper_image_03');?>" alt="" />
-          </div>
-        </div>
-        <div class="case_transparente">
-          <!-- scf pour text dans wp -->
-          <h1 class="titre"><?php the_title();?></h1>
-          <div class="swiper02">
+<div class="pageblanche">
+
+  <section class="hero">
+          <div class="swiper">
             <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                  <!-- scf pour image dans wp -->
+                  <img src="<?php the_field('swiper_image_01');?>" alt="ciel01" />
+                </div>
+                <div class="swiper-slide">
+                  <!-- scf pour image dans wp -->
+                  <img src="<?php the_field('swiper_image_02');?>" alt="ciel02" />
+                </div>
+                <div class="swiper-slide">
+                  <!-- scf pour image dans wp -->
+                  <img src="<?php the_field('swiper_image_03');?>" alt="ciel03" />
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+          <div class="case_transparente">
+            <!-- scf pour text dans wp -->
+            <h1 class="titre"><?php the_title();?></h1>
+            <div class="swiper02">
+              <div class="swiper-wrapper">
 
-            <!-- wp querry -->
-            <?php
-              $arguments = array( // 👈 Tableau d'arguments
-                'post_type' => 'new',
-                'posts_per_page' => 3, 
-                'orderby' => 'date',
-              );
-              $projects = new WP_Query($arguments); // 👈 Utilisation
-              while ($projects->have_posts()) : $projects->the_post(); 
-            ?>
-            
-              <div class="swiper-slide">
-                <!-- scf pour text dans wp -->
-                <h3 class="article_hero"><?php the_field('descriptif_one_sentence')?></h3>
+              <!-- wp querry -->
+              <?php
+                $arguments = array( // 👈 Tableau d'arguments
+                  'post_type' => 'new',
+                  'posts_per_page' => 3, 
+                  'orderby' => 'date',
+                );
+                $projects = new WP_Query($arguments); // 👈 Utilisation
+                while ($projects->have_posts()) : $projects->the_post(); 
+              ?>
+              
+                <div class="swiper-slide">
+                  <!-- scf pour text dans wp -->
+                  <h3 class="article_hero"><?php the_field('descriptif_one_sentence')?></h3>
+                </div>
+
+              <?php
+                endwhile; 
+                wp_reset_postdata(); 
+              ?>
               </div>
-
-            <?php
-              endwhile; 
-              wp_reset_postdata(); 
-            ?>
             </div>
           </div>
-        </div>
     </section>
     
-        <div class="swiper">
-          <div class="swiper-wrapper">
-              <div class="swiper-slide">
-                
-                <img src="<?php the_field('swiper_image_01');?>" alt="ciel01" />
-              </div>
-              <div class="swiper-slide">
-                <img src="<?php the_field('swiper_image_02');?>" alt="ciel02" />
-              </div>
-              <div class="swiper-slide">
-                <img src="<?php the_field('swiper_image_03');?>" alt="ciel03" />
-              </div>
-          </div>
-          <div class="swiper-pagination"></div>
-          <div class="vecteur_batiment">
-            <img class="building01" src="<?php the_field('swiper_image_01');?>" alt="" />
-            <img class="building02" src="<?php the_field('swiper_image_02');?>" alt="" />
-            <img class="building03" src="<?php the_field('swiper_image_03');?>" alt="" />
-          </div>
-        </div>
-        <div class="case_transparente">
-          <h1 class="titre"><?php the_title();?></h1>
-          <div class="swiper02">
-            <div class="swiper-wrapper">
 
-            <?php
-              $arguments = array( // 👈 Tableau d'arguments
-                'post_type' => 'new',
-                'posts_per_page' => 3, 
-                'orderby' => 'date',
-              );
-              $projects = new WP_Query($arguments); // 👈 Utilisation
-              while ($projects->have_posts()) : $projects->the_post(); 
-            ?>
-            
-              <div class="swiper-slide">
-                <h3 class="article_hero"><?php the_field('descriptif_one_sentence')?></h3>
-              </div>
+  <section class="a_propos">
+      <!-- url pour image mise en avant -->
+      <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
 
-            <?php
-              endwhile; 
-              wp_reset_postdata(); 
-            ?>
-            </div>
-          </div>
-        </div>
-    </section>
+      <div class="contenue">
+          <h4 class="description">
+              <!-- aller rechercher le texte écrit sur la page de wp -->
+              <?php the_content(); ?>
+          </h4>
+      </div>
+  </section>
 
-<section class="a_propos">
-    <!-- url pour image mise en avant -->
-    <img src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
-
-    <div class="contenue">
-        <h4 class="description">
-            <!-- aller rechercher le texte écrit sur la page de wp -->
-            <?php the_content(); ?>
-        </h4>
-    </div>
-</section>
+</div>
 
 <?php endwhile; // Fermeture de la boucle
 
@@ -135,6 +84,5 @@ else : // Si aucune page n'a été trouvée
 	get_template_part( 'partials/404' ); // Affiche partials/404.php
 endif;
 
-get_sidebar(); // Affiche le contenu de sidebar.php
 get_footer(); // Affiche footer.php 
 ?>

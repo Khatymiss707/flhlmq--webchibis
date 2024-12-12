@@ -5,7 +5,7 @@
 @media screen and (max-width: 375px) {
     .banniere {
         background-color: var(--bleu-calypso);
-        padding: 4%;
+        padding: 3%;
         display: grid;
         text-align: center;
         gap: 10px;
@@ -81,9 +81,9 @@
 
     .banniere {
         background-color: var(--bleu-calypso);
-        padding: 1% 2%;
+        padding: 10px 2%;
         display: grid;
-        grid-template-columns: auto auto auto;
+        grid-template-columns: auto auto;
         gap: 7px;
 
         .banniere_btn {
@@ -94,6 +94,8 @@
             grid-template-columns: auto auto;
 
             button {
+
+                font-size: 14px;
 
                 &.fermer {
                     padding: 0.7em;
@@ -113,6 +115,7 @@
         p {
             margin: auto 0;
             font-size: 16px;
+            text-align: center;
         }
     }
 }

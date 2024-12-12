@@ -29,7 +29,7 @@ Version: 2.0
 @media screen and (max-width: 375px) {
   .banniere {
     background-color: var(--bleu-calypso);
-    padding: 4%;
+    padding: 3%;
     display: grid;
     text-align: center;
     gap: 10px;
@@ -87,9 +87,9 @@ Version: 2.0
 @media screen and (min-width: 769px) {
   .banniere {
     background-color: var(--bleu-calypso);
-    padding: 1% 2%;
+    padding: 10px 2%;
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
     gap: 7px;
   }
   .banniere .banniere_btn {
@@ -98,6 +98,9 @@ Version: 2.0
     display: grid;
     gap: 7px;
     grid-template-columns: auto auto;
+  }
+  .banniere .banniere_btn button {
+    font-size: 14px;
   }
   .banniere .banniere_btn button.fermer {
     padding: 0.7em;
@@ -112,6 +115,7 @@ Version: 2.0
   .banniere p {
     margin: auto 0;
     font-size: 16px;
+    text-align: center;
   }
 }
 .s_congres {

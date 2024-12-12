@@ -14,6 +14,7 @@
         <?php is_front_page() ? bloginfo('description') : wp_title(''); // si nous sommes sur la page d'accueil, affichez la description à partir des paramètres du site - sinon, affichez le titre du post ou de la page. ?>
     </title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css"/>
     <?php 
 	// Tous les .css et .js sont chargés dans le fichier functions.php
     ?>
@@ -55,6 +56,4 @@
         </section>
 
     </header>
-
-    <!-- CONTENU PRINCIPAL -->
-    <div class="pageblanche">
+    

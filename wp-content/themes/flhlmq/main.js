@@ -63,8 +63,8 @@ older.addEventListener("click", () => {
 
 //accordeon
 
-var $title = $('.title');
-var content   = '.content';
+let $title = $('.question');
+let content   = '.answer';
 $title.click(function () {
   $(this).next(content).slideToggle();
   $(this).parent().siblings().children().next().slideUp();
