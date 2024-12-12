@@ -1,7 +1,7 @@
 <?php 
 /**
  * 	Template Name: services
- * 	Post Type : service 
+ * 	Post Type : service, page
  */
 
 get_header(); // Affiche header.php

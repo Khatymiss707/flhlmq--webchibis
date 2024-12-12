@@ -2,7 +2,7 @@
 /**
  * 	Template Name: list services
  * 	Template Post Type : service-list
- *  Post Type : service-list
+ *  Post Type : service-list, page
  */
 
 get_header(); // Affiche header.php

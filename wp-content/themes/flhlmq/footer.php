@@ -7,7 +7,8 @@
 </div>
 
 <footer class="footer">
-    <div class="column1">
+    <!--
+    <div class="column1">-->
         <div class="titre_footer">
             <div class="logo">
                 <!-- scf pour image dans wp -->
@@ -37,7 +38,7 @@
             </div>
         </div>
     </div>
-    <div class="column2">
+    <!--<div class="column2">-->
         <div class="partners">
             <p class="partenaires">
                 <!-- scf pour texte dans wp -->
@@ -70,15 +71,31 @@
                 <?php the_field('buttons_btn_label'); ?>
             </button>
         </div>
-    </div>
+    </div> 
+
+    
     <!-- scf pour texte dans wp -->
     <p class="credit"><?php the_field('credits'); ?></p>
+
+    <?php
+						$arguments = array( // 👈 Tableau d'arguments
+							'post_type' => 'footer',
+							'posts_per_page' => 1, 
+						);
+						$projects = new WP_Query($arguments); // 👈 Utilisation
+						while ($projects->have_posts()) : $projects->the_post(); 
+						?>
 </footer>
 
 <?php wp_footer(); 
 /* Espace où WordPress peut insérer des fichiers .js et autres. Par exemple pour des extensions (plugins). 
 	 Si vous enlevez cette fonction, vous désactiverez du même coup toutes vos extensions (plugins) 🤷. 
 	 Vous pouvez la déplacer si désiré, mais garder là. */
+
+     /*wp-query*/
+
+     
+
 ?>
 
 </body>
