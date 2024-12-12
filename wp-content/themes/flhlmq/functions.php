@@ -17,7 +17,7 @@ register_nav_menus(
 			1. 'main-menu' = Nom dans le code
 			2. 'Menu principal' = Nom dans l'admin
 			3. 'Menu principal du site' = Description dans l'admin */
-		'main-menu' => __( 'Menu principal', 'Menu principal du site' ), 
+		'main_menu' => __( 'main_menu', 'main_menu' ), 
 		/* Dupliquer cette ligne si vous désirez déclarer d'autres menus */
 	)
 );

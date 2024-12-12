@@ -11,6 +11,54 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 	while ( have_posts() ) : the_post(); 
 ?>
 
+    <section class="hero">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="<?php the_field('swiper_image_01');?>" alt="ciel01" />
+              </div>
+              <div class="swiper-slide">
+                <img src="<?php the_field('swiper_image_02');?>" alt="ciel02" />
+              </div>
+              <div class="swiper-slide">
+                <img src="<?php the_field('swiper_image_03');?>" alt="ciel03" />
+              </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="vecteur_batiment">
+            <img class="building01" src="<?php the_field('swiper_image_01');?>" alt="" />
+            <img class="building02" src="<?php the_field('swiper_image_02');?>" alt="" />
+            <img class="building03" src="<?php the_field('swiper_image_03');?>" alt="" />
+          </div>
+        </div>
+        <div class="case_transparente">
+          <h1 class="titre"><?php the_title();?></h1>
+          <div class="swiper02">
+            <div class="swiper-wrapper">
+
+            <?php
+              $arguments = array( // 👈 Tableau d'arguments
+                'post_type' => 'new',
+                'posts_per_page' => 3, 
+                'orderby' => 'date',
+              );
+              $projects = new WP_Query($arguments); // 👈 Utilisation
+              while ($projects->have_posts()) : $projects->the_post(); 
+            ?>
+            
+              <div class="swiper-slide">
+                <h3 class="article_hero"><?php the_field('descriptif_one_sentence')?></h3>
+              </div>
+
+            <?php
+              endwhile; 
+              wp_reset_postdata(); 
+            ?>
+            </div>
+          </div>
+        </div>
+    </section>
+
     <section class="liste_service_page">
         <img class="titre_services" src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
 

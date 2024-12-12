@@ -11,62 +11,53 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 	while ( have_posts() ) : the_post(); 
 ?>
 
-<section class="hero">
+    <section class="hero">
+        <div class="swiper">
+          <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="<?php the_field('swiper_image_01');?>" alt="ciel01" />
+              </div>
+              <div class="swiper-slide">
+                <img src="<?php the_field('swiper_image_02');?>" alt="ciel02" />
+              </div>
+              <div class="swiper-slide">
+                <img src="<?php the_field('swiper_image_03');?>" alt="ciel03" />
+              </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="vecteur_batiment">
+            <img class="building01" src="<?php the_field('swiper_image_01');?>" alt="" />
+            <img class="building02" src="<?php the_field('swiper_image_02');?>" alt="" />
+            <img class="building03" src="<?php the_field('swiper_image_03');?>" alt="" />
+          </div>
+        </div>
+        <div class="case_transparente">
+          <h1 class="titre"><?php the_title();?></h1>
+          <div class="swiper02">
+            <div class="swiper-wrapper">
 
-            <section class="nav">
-                <nav class="navbar">
-                    <div class="hamburger">
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                        <span class="bar"></span>
-                    </div>
-                    <ul class="nav_menu">
-
-                        <li class="nav-item">
-                          <a href="#" class="nav-link">équipe</a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="liste_service.html" class="nav-link">services</a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="liste_nouvelles.html" class="nav-link">nouvelles</a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="a_propos.html" class="nav-link">à propos</a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="#" class="nav-link">faq</a>
-                        </li>
-                        <li class="nav-item">
-                          <a href="joindre.html" class="nav-link">nous joindre</a>
-                        </li>
+            <?php
+              $arguments = array( // 👈 Tableau d'arguments
+                'post_type' => 'new',
+                'posts_per_page' => 3, 
+                'orderby' => 'date',
+              );
+              $projects = new WP_Query($arguments); // 👈 Utilisation
+              while ($projects->have_posts()) : $projects->the_post(); 
+            ?>
             
-                        <div class="right_side_nav">
-            
-                          <li class="nav-item autre">
-                            <img class="loupe" src="./medias/images/page_accueil/icones/loupe.svg" alt="loupe">
-                          </li>
-            
-                          <li class="nav-item  autre">
-                            <select>
-                              <option value="fr">FRA</option>
-                              <option value="eng">ENG</option>
-                            </select>
-                          </li>
-                        </div>
-                      </ul>
-                </nav>
-            </section>
+              <div class="swiper-slide">
+                <h3 class="article_hero"><?php the_field('descriptif_one_sentence')?></h3>
+              </div>
 
-            <img class="image_nouvelle" src="<?php the_field('hero_arriere'); ?>" alt="">
-
-            <div class="case_transparente nouvelle">
-                <h1 class="titre nouvelle"><?php the_field('hero_hero_title'); ?></h1>
-                <h2 class="categorie"><?php the_field('hero_categorie'); ?></hh2>
-                <h2 class="date"><?php the_field('hero_date'); ?></h2>
+            <?php
+              endwhile; 
+              wp_reset_postdata(); 
+            ?>
             </div>
-
-        </section>
+          </div>
+        </div>
+    </section>
 
 <div class="service_comite">
     <img class="service_titre_comite" src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
