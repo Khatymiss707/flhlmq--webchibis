@@ -11,11 +11,13 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 	while ( have_posts() ) : the_post(); 
 ?>
 
-<div class="pageblanche">
+  <!--DIV GLOBAL-->
+  <div class="pageblanche">
 
     <section class="joindre_page">
       <img class="titre" src="<?php the_post_thumbnail_url(); ?>" alt="nous joindre" />
 
+      <!--BANDES D'INFORMATION-->
       <div class="information">
 
         <div class="bande poste">
@@ -27,16 +29,14 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
             <h3 class="titre"><?php the_field('addresse_contact_title'); ?></h3>
             <p class="info"><?php the_field('addresse_contact_options'); ?></p>
         </div>
-        <div class="bande copieur">
 
+        <div class="bande copieur">
           <h3 class="titre"><?php the_field('telephone_contact_title'); ?></h3>
           <p class="info"><?php the_field('telephone_contact_options'); ?></p>
-
         </div>
-
-
       </div>
 
+      <!--FORMULAIRE-->
       <div class="formulaire">
         <img src="<?php the_field('title_contact'); ?>" alt="">
         <form>
@@ -57,7 +57,9 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
         </form>
       </div>
+
     </section>
+    
   </div>
 
 <?php endwhile; // Fermeture de la boucle
