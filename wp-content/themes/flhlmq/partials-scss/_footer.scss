@@ -9,6 +9,10 @@
         color: var(--blanc);
         display: grid;
         gap: 10px;    
+
+        .navigation{
+            margin-block: 4%;
+        }
         .lien {
             a {
                 &:hover {
@@ -54,7 +58,7 @@
             text-align: center;
 
             & img {
-                width: 100%;
+                width: 70%;
             }
         }
         p {

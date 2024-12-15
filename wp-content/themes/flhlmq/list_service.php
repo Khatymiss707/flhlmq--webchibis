@@ -34,7 +34,9 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
         </div>
         <div class="case_transparente">
             <!-- scf pour text dans wp -->
-            <h1 class="titre"><?php the_title();?></h1>
+            <h1 class="titre">
+                <?php the_field("description_courte_titre")?>
+            </h1>
             <div class="swiper02">
                 <div class="swiper-wrapper">
 
@@ -49,7 +51,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
               ?>
                 <div class="swiper-slide">
                    <h3 class="article_hero">
-                      <?php the_field("next_service_description")?>
+                      <?php the_field("description_courte")?>"
                    </h3>
                 </div>
 
@@ -78,7 +80,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
         <div class="listes_services_caroussel">
             <!-- scf pour image dans wp -->
-            <img class="titre_liste_services" src="<?php the_field('liste-service-header'); ?>" alt="">
+            <img class="titre_liste_services" src="<?php the_field('title_services'); ?>" alt="">
 
             <div class="swiper03">
                 <div class="swiper-wrapper">
@@ -91,7 +93,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
                           $projects = new WP_Query($arguments); // 👈 Utilisation
                           while ($projects->have_posts()) : $projects->the_post(); 
                         ?>
-
+<!--
                         <div class="prochaine_nouvelle">
                           <a href="<?php the_field('link_next_services');?>">
                             <h2>
@@ -100,81 +102,32 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
                           </a>
                           <p><?php the_title(); ?></p>
                         </div>
-
+-->
+                        <img src="<?php the_field('service-image');?>" alt="Card 1" class="card-image">
                         <div class="card-content">
                             <!-- scf pour texte dans wp -->
-                            <a href="<?php the_field('link_next_services');?>">
+                            <a href="<?php the_field('service_url');?>">
                             <h2>
-                              <?php the_field('service-list-title'); ?>
+                              <?php the_field('service_title'); ?>
                             </h2>
                           </a>
-                            <h2 class="card-title"><?php the_field('service-list-title'); ?></h2>
                             <p class="card-description">
                                 <!-- scf pour texte dans wp -->
-                                <?php the_field('description'); ?>
+                                <?php the_field('description_courte'); ?>
                             </p>
-                            <button class="card-button">
-                                <!-- scf pour texte dans wp -->
-                                <?php the_field('list-services-btn'); ?>
-                            </button>
+                            <a href="<?php the_field('present-services-label'); ?>">
+                                <button class="card-button">
+                                    <!-- scf pour texte dans wp -->
+                                    <?php the_field('present-services-label'); ?>
+                                </button>
+                            </a>
+                            
                         </div>
 
                         <?php
                           endwhile; 
                           wp_reset_postdata(); 
                         ?>
-                        <!-- scf pour image dans wp -->
-                        <img src="<?php the_field('serviceimage'); ?>" alt="Card 1" class="card-image">
-                        <div class="card-content">
-                            <!-- scf pour texte dans wp -->
-                            <h2 class="card-title"><?php the_field('service-list-title'); ?></h2>
-                            <p class="card-description">
-                                <!-- scf pour texte dans wp -->
-                                <?php the_field('description_courte'); ?>
-                            </p>
-                            <button class="card-button">
-                                <!-- scf pour texte dans wp -->
-                                <?php the_field('list-services-btn'); ?>
-                            </button>
-                        </div>
-                    </div>
-                    <!--
-                  <div class="swiper-slide card">
-                  <img src="./medias/images/liste_service/caroussel/infolettre.jpeg" alt="Card 2" class="card-image">
-                  <div class="card-content">
-                      <h2 class="card-title">Service 02 - L’Infolettre</h2>
-                      <p class="card-description">
-                      “Rester à jour en vous inscrivant à l'infolettre!”
-                      </p>
-                      <button class="card-button">En savoir plus</button>
-                  </div>
-                  </div>
-                  
-                  <div class="swiper-slide card">
-                  <img src="./medias/images/liste_service/caroussel/environnemnt_saint.png" alt="Card 3" class="card-image">
-                  <div class="card-content">
-                      <h2 class="card-title">Service 03 - Environnement sain</h2>
-                      <p class="card-description">
-                      “Rejoignez-nous pour un environnement sain, solidaire et engagé pour la défense de vos droits de
-                      locataire.”
-
-                      </p>
-                      <button class="card-button">En savoir plus</button>
-                  </div>
-                  </div>
-
-                  <div class="swiper-slide card">
-                  <img src="./medias/images/liste_service/caroussel/comité_consultatif.jpg" alt="Card 4" class="card-image">
-                  <div class="card-content">
-                      <h2 class="card-title">Service 04 - Comité consultatif</h2>
-                      <p class="card-description">
-                      “Échanger, voter les grandes orientations de la fédération et élire le conseil d'administration.”
-                      </p>
-                      <button onclick="window.location.href='service_comite_consultatif.html'" class="card-button">En savoir
-                      plus</button>
-                  </div>
-                  </div>
-                  </div> -->
                 </div>
             </div>
 
