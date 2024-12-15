@@ -1,10 +1,10 @@
 <?php 
 /**
- * 	Template Name: services
- * 	Post Type : service, page
+ * Template Name: Services
+ * Template Post Type: post, page, service
  */
 
-get_header(); // Affiche header.php
+ get_header(); // Affiche header.php
 
 if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ? 
 	// Si oui, bouclons au travers les pages (logiquement, il n'y en aura qu'une)
@@ -14,54 +14,76 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 <div class="pageblanche">
 
   <section class="hero">
-          <div class="swiper">
+        <?php
+             $arguments = array( // 👈 Tableau d'arguments
+             'post_type' => 'service',
+            'posts_per_page' => 1
+              );
+             $projects = new WP_Query($arguments); // 👈 Utilisation
+             while ($projects->have_posts()) : $projects->the_post(); 
+         ?>
+
+        <div class="swiper">
             <div class="swiper-wrapper">
                 <div class="swiper-slide">
-                  <!-- scf pour image dans wp -->
-                  <img src="<?php the_field('swiper_image_01');?>" alt="ciel01" />
+                    <img src="<?php the_field("swiper_image_01")?>" alt="ciel01" />
                 </div>
                 <div class="swiper-slide">
-                  <!-- scf pour image dans wp -->
-                  <img src="<?php the_field('swiper_image_02');?>" alt="ciel02" />
+                    <img src="<?php the_field("swiper_image_02")?>" alt="ciel02" />
                 </div>
                 <div class="swiper-slide">
-                  <!-- scf pour image dans wp -->
-                  <img src="<?php the_field('swiper_image_03');?>" alt="ciel03" />
+                    <img src="<?php the_field("swiper_image_03")?>" alt="ciel03" />
+                </div>
+                <div class="swiper-slide">
+                    <img src="<?php the_field("swiper_image_04")?>" alt="ciel03" />
                 </div>
             </div>
             <div class="swiper-pagination"></div>
-          </div>
-          <div class="case_transparente">
-            <!-- scf pour text dans wp -->
-            <h1 class="titre"><?php the_title();?></h1>
+        </div>
+        
+         <?php
+                    endwhile; 
+                    wp_reset_postdata(); 
+         ?>
+                
+                
+        <div class="case_transparente">
+            
+            
+         
+            <h1 class="titre">
+                <?php the_field("next_service_title")?>"
+            </h1>
+            
             <div class="swiper02">
-              <div class="swiper-wrapper">
-
-              <!-- wp querry -->
-              <?php
-                $arguments = array( // 👈 Tableau d'arguments
-                  'post_type' => 'new',
-                  'posts_per_page' => 4, 
-                );
-                $projects = new WP_Query($arguments); // 👈 Utilisation
-                while ($projects->have_posts()) : $projects->the_post(); 
-              ?>
-              
-                <div class="swiper-slide">
-                  <!-- scf pour text dans wp -->
-                  <h3 class="article_hero"><?php the_field('descriptif_one_sentence')?></h3>
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <h3 class="article_hero">
+                            <?php the_field("next_service_description")?>"
+                        </h3>
+                    </div>
+                    <div class="swiper-slide">
+                        <h3 class="article_hero">
+                            <?php the_field("next_service_description")?>"
+                        </h3>
+                    </div>
+                    <div class="swiper-slide">
+                        <?php the_field("next_service_description")?>"
+                        </h3>
+                    </div>
+                    <div class="swiper-slide">
+                        <?php the_field("next_service_description")?>"
+                        </h3>
+                    </div>
                 </div>
-
-              <?php
-                endwhile; 
-                wp_reset_postdata(); 
-              ?>
-              </div>
             </div>
-          </div>
-      </section>
+            
+        </div>
+
+    </section>
 
   <div class="service_comite">
+              
       <!-- url pour image mise en avant -->
       <img class="service_titre_comite" src="<?php the_post_thumbnail_url(); ?>" alt="<?php the_title(); ?>">
 
@@ -84,21 +106,26 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
       </p>
 
       <div class="page_comite_suivant">
-          <a href="<?php the_field('next-news_url'); ?>">
+
+          <a href="<?php the_field('next_service_url'); ?>">
               <!--<a href="#service_infolettre">-->
               <h2 class="suivant_titre">
                   <!-- scf pour texte dans wp -->
-                  <?php the_field('next_news'); ?>
+                  <?php the_field('next_service_title'); ?>
               </h2>
           </a>
+          
           <h3 class="service_suivant_infolettre_titre">
               <!-- scf pour texte dans wp -->
-              <?php the_field('next-news-sous-titre'); ?>
+              <?php the_field('next_service_sous-titre'); ?>
           </h3>
           <p class="service_suivant_infolettre_para" style="color: white;">
               <!-- scf pour texte dans wp -->
-              <?php the_field('next-news-description'); ?>
+              <?php the_field('next_service_description'); ?>
           </p>
+          
+
+          </br></br>
       </div>
 
   </div>
