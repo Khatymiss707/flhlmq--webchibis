@@ -270,6 +270,8 @@ Version: 2.0
     align-items: center;
 
     p {
+        margin-left: 8%;
+        align-self: flex-start;
         color: var(--noir);
         max-width: 85%;
         text-align: justify;
@@ -294,11 +296,15 @@ Version: 2.0
     }
 
     a {
+        
+        margin-left: 8%;
+        margin-top: 2%;
         display: flex;
         color: var(--bleu-calypso);
         font-size: 22px;
         font-weight: 700;
-
+        align-self: flex-start;
+        
         &.document_agir {
             margin-bottom: 3%;
 
@@ -306,6 +312,8 @@ Version: 2.0
     }
 
     .page_comite_suivant {
+        display: flex;
+        flex-direction: column;
         background-color: var(--bleu-calypso);
         padding: 5%;
         max-width: 80vw;
@@ -325,10 +333,12 @@ Version: 2.0
 
         .service_suivant_infolettre {
             &_titre {
+                align-self: flex-end;
                 font-size: 22px;
             }
 
             &_para {
+                align-self: flex-end;
                 font-size: 18px;
 
             }
@@ -1891,7 +1901,7 @@ Version: 2.0
             width: 100%;
             max-width: 700px;
             float: right;
-            margin-top: 30px;
+            margin-top: 60px;
         }
 
         .question {
@@ -2847,7 +2857,7 @@ Version: 2.0
         .title {
             width: 100%;
             max-width: 700px;
-            margin-top: 30px;
+            margin-top: 70px;
         }
 
         .boite_question {
@@ -2881,7 +2891,7 @@ Version: 2.0
         }
 
         .input {
-            margin-top: 5vh;
+            margin: 10px auto 70px auto;
             background-color: #E6E6E6;
             border: var(--bleu-calypso) 0.3vh solid;
             width: 80vw;
@@ -2891,7 +2901,7 @@ Version: 2.0
         .souris_icone {
             width: 3vw;
             position: absolute;
-            transform: translateY(-45%);
+            transform: translateY(-400%);
             right: 10%;
         }
     }
