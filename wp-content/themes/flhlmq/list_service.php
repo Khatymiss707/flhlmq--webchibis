@@ -38,23 +38,22 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
             <div class="swiper02">
                 <div class="swiper-wrapper">
 
-                    <!-- wp querry -->
-                    <?php
+                 <!--WP QUERY  POUR DESCRIPTION COURTE DANS LE SWIPPER-->
+              <?php
                 $arguments = array( // 👈 Tableau d'arguments
-                  'post_type' => 'new',
-                  'posts_per_page' => 3, 
-                  'orderby' => 'date',
+                  'post_type' => 'service',
+                  'posts_per_page' => 4, 
                 );
                 $projects = new WP_Query($arguments); // 👈 Utilisation
                 while ($projects->have_posts()) : $projects->the_post(); 
               ?>
+                <div class="swiper-slide">
+                   <h3 class="article_hero">
+                      <?php the_field("next_service_description")?>
+                   </h3>
+                </div>
 
-                    <div class="swiper-slide">
-                        <!-- scf pour text dans wp -->
-                        <h3 class="article_hero"><?php the_field('descriptif_one_sentence')?></h3>
-                    </div>
-
-                    <?php
+              <?php
                 endwhile; 
                 wp_reset_postdata(); 
               ?>
@@ -131,7 +130,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
                             <h2 class="card-title"><?php the_field('service-list-title'); ?></h2>
                             <p class="card-description">
                                 <!-- scf pour texte dans wp -->
-                                <?php the_field('description'); ?>
+                                <?php the_field('description_courte'); ?>
                             </p>
                             <button class="card-button">
                                 <!-- scf pour texte dans wp -->

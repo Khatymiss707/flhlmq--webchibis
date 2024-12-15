@@ -35,7 +35,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
         <div class="case_transparente">
 
           <h1 class="titre">
-            <?php the_field("next_service_title")?>
+            <?php the_field("description_courte_titre")?>
           </h1>
 
           <div class="swiper02">
@@ -54,7 +54,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
                 <div class="swiper-slide">
                    <h3 class="article_hero">
-                      <?php the_field("next_service_description")?>"
+                      <?php the_field("description_courte")?>"
                    </h3>
                 </div>
 
@@ -116,6 +116,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
         </div>
 
     </div>
+    
 </div>
 
 <?php endwhile; // Fermeture de la boucle
