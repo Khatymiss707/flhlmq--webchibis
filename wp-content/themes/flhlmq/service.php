@@ -40,8 +40,8 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
               <!-- wp querry -->
               <?php
                 $arguments = array( // 👈 Tableau d'arguments
-                  'post_type' => 'new',
-                  'posts_per_page' => 3, 
+                  'post_type' => 'service',
+                  'posts_per_page' => 4, 
                   'orderby' => 'date',
                 );
                 $projects = new WP_Query($arguments); // 👈 Utilisation

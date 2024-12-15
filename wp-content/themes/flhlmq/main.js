@@ -34,33 +34,6 @@ document.querySelectorAll(".nav-link").forEach(n => n.addEventListener("click", 
   navMenu.classList.remove("active");
 }));
 
-fetch("http://localhost:81/federation-des-locataires--web-chibis/wp-json/wp/v2/new/?_embed")
-  .then(response => response.json())
-  .then(news => {
-    console.log(news); 
-  });
-
-//liste nouvelles fetch filter
-let recent = document.getElementById("recent"); 
-let older = document.getElementById("vieux"); 
-
-recent.addEventListener("click", () => {
-  fetch("http://localhost:81/federation-des-locataires--web-chibis/wp-json/wp/v2/new?orderby=date&order=asc")
-  .then(response => response.json())
-  .then(news => {
-    console.log(news); 
-  });
-}); 
-
-older.addEventListener("click", () => {
-  fetch("http://localhost:81/federation-des-locataires--web-chibis/wp-json/wp/v2/new?orderby=date&order=desc")
-  .then(response => response.json())
-  .then(news => {
-    console.log(news); 
-  });
-}); 
-
-
 //accordeon
 
 let $title = $('.question');
@@ -88,9 +61,7 @@ var swiper03 = new Swiper(".swiper03", {
 //gsap background parrallax
 
 const logo = document.querySelector(".logo_lettre");
-
-
-document.addEventListener("DOMContentLoaded", (event) => {
+document.addEventListener("DOMContentLoaded", () => {
   // gsap code here!
   gsap.from(logo, {
     repeat: -1,
@@ -99,6 +70,18 @@ document.addEventListener("DOMContentLoaded", (event) => {
   });
 
  });
+
+ //Banniere ecole btn fermer/close
+
+ let close = document.querySelector(".fermer");
+ let banner = document.querySelector(".banniere"); 
+
+close.addEventListener("click", function () {
+  banner.style.display = "none";
+}); 
+ 
+
+
 
 
 

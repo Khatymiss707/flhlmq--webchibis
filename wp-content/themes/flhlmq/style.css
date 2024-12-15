@@ -41,11 +41,17 @@ Version: 2.0
     border-radius: 0.8em;
     font-size: 3vw;
   }
+  .banniere button.fermer:hover {
+    background-color: #696767;
+  }
   .banniere button.visiter {
     padding: 1em;
     width: 90vw;
     border-radius: 0.8em;
     font-size: 3vw;
+  }
+  .banniere button.visiter:hover {
+    background-color: #0b3241;
   }
   .banniere p {
     font-size: 14px;
@@ -2271,7 +2277,7 @@ a {
     width: 100%;
     max-width: 700px;
     float: right;
-    margin-top: 30px;
+    margin-top: 60px;
   }
   .infolettre .question {
     padding: 1vh;
@@ -3005,7 +3011,7 @@ a {
   .infolettre .title {
     width: 100%;
     max-width: 700px;
-    margin-top: 30px;
+    margin-top: 70px;
   }
   .infolettre .boite_question {
     background-color: #1c566d;
@@ -3028,7 +3034,7 @@ a {
     padding: 1vh;
   }
   .infolettre .input {
-    margin-top: 5vh;
+    margin: 10px auto 70px auto;
     background-color: #E6E6E6;
     border: var(--bleu-calypso) 0.3vh solid;
     width: 80vw;
@@ -3037,7 +3043,7 @@ a {
   .infolettre .souris_icone {
     width: 3vw;
     position: absolute;
-    transform: translateY(-45%);
+    transform: translateY(-400%);
     right: 10%;
   }
   .liste_service_page {

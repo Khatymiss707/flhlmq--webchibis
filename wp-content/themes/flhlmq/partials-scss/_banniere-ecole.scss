@@ -18,6 +18,10 @@
                 width: 90vw;
                 border-radius: 0.8em;
                 font-size: 3vw;
+
+                &:hover {
+                    background-color: #696767;
+                }
             }
 
             &.visiter {
@@ -25,6 +29,10 @@
                 width: 90vw;
                 border-radius: 0.8em;
                 font-size: 3vw;
+
+                &:hover {
+                    background-color: #0b3241;
+                }
             }
         }
 
