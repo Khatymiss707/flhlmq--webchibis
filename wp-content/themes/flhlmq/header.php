@@ -1,7 +1,7 @@
 <?php
-	/*-----------------------------------------------------------------------------------*/
-	/* Affiche l'entête (Header) sur toutes vos pages
-	/*-----------------------------------------------------------------------------------*/
+    /*-----------------------------------------------------------------------------------*/
+    /* Affiche l'entête (Header) sur toutes vos pages
+    /*-----------------------------------------------------------------------------------*/
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/style.css"/>
     <?php 
-	// Tous les .css et .js sont chargés dans le fichier functions.php
+    // Tous les .css et .js sont chargés dans le fichier functions.php
     ?>
     <!--Instancier des fichier CSS et js dans le <head>-->
     <?php wp_head(); ?>
@@ -48,14 +48,24 @@
 
                 <?php
                     wp_nav_menu( array(
-                    'theme_location' => 'main_menu',  // S'assurer de chercher main_menu pour menu principal dans l'acceuil
-                    'menu_class' => 'nav_menu',  // Applique classes nav_menu et etc. aux liens et nav
-                    'container' => 'ul',
-                    'list_item_class' => 'nav-item',
-                    'link_item_class' => 'nav-link',
-                ));?>
+                        'theme_location' => 'main_menu',  // S'assurer de chercher main_menu pour menu principal dans l'acceuil
+                        'menu_class' => 'nav_menu',  // Applique classes nav_menu et etc. aux liens et nav
+                        'container' => 'ul',
+                        'list_item_class' => 'nav-item',
+                        'link_item_class' => 'nav-link',
+                    ));
+                ?>
+
+                <!-- Multilang Language Switcher -->
+                <select class="language-switcher">
+                    <?php
+                        if ( function_exists('multilang_language_switcher') ) {
+                            multilang_language_switcher();
+                        }
+                    ?>
+                </select>
             </nav>
         </section>
 
     </header>
-    
+
