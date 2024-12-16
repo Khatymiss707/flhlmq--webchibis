@@ -27,10 +27,12 @@
     <header>
 
         <!--BANNIERE SCOLAIRE-->
-        <div class="banniere">
+         <div class="banniere">
             <p><?php the_field('description'); ?></p>
             <div class="banniere_btn">
-                <button class="visiter"><?php the_field('visite'); ?></button>
+                <a href="https://flhlmq.com/fr">
+                    <button class="visiter"><?php the_field('visite'); ?></button>
+                </a>
                 <button class="fermer"><?php the_field('fermer'); ?></button>
             </div>
         </div>

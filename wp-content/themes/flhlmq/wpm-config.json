@@ -1,0 +1,7 @@
+{
+  "post_types": {
+    "footer": {}, 
+    "new" : {}, 
+    "service" : {}
+  }
+}

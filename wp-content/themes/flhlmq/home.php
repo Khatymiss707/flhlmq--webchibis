@@ -6,13 +6,13 @@
 
 get_header(); // Affiche header.php
 
-if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ? 
+if ( have_posts() ) : // Est-ce que nous avons des pages Ã  afficher ? 
 	// Si oui, bouclons au travers les pages (logiquement, il n'y en aura qu'une)
 	while ( have_posts() ) : the_post(); 
 ?>
 
  <!--LOGO IN REPEAT DANS L'ARRIERE PLAN-->
-  <img class="logo_lettre" src="<?php the_field('actuality_section_background_house'); ?>" alt="logo">
+  <img class="logo_lettre" src="<?php the_field('background_gsap'); ?>" alt="logo">
   
   <!--DIV GLOBAL-->
   <div class="pageblanche">
@@ -48,12 +48,12 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
             <!--WP QUERY 3 NOUVELLES POUR 3 SWIPER SLIDES POUR DESCRIPTION COURTE-->
             <?php
-              $arguments = array( // 👈 Tableau d'arguments
+              $arguments = array( // ðŸ‘ˆ Tableau d'arguments
                 'post_type' => 'new',
                 'posts_per_page' => 3, 
                 'orderby' => 'date',
               );
-              $projects = new WP_Query($arguments); // 👈 Utilisation
+              $projects = new WP_Query($arguments); // ðŸ‘ˆ Utilisation
               while ($projects->have_posts()) : $projects->the_post(); 
             ?>
             
@@ -79,49 +79,52 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
         <div class="bloc_information">
           <h3 class="descriptif_equipe"><?php the_field('join_section_description'); ?></h3>
           <div class="btn_donation">
-            <button class="membre"><?php the_field('join_section_btn_btn_title'); ?></button>
+            <a href="<?php the_field('join_section_btn_link_join'); ?>">
+              <button class="membre"><?php the_field('join_section_btn_btn_title'); ?></button>
+            </a>
           </div>
         </div>
       </section>
-    
-      <!--SECTION DESCRPTIF DE CHAQUE SERVICE-->
+      
+      <!--SECTION DESCRIPTIF DE CHAQUE SERVICE-->
       <section class="services">
         <img class="titre_services" src="<?php the_field('services_section_title'); ?>" alt="">
-        <div class="c_contenu">
-          <div class="s_congres">
-            <h3 class="titre">Service 01 - <?php the_field('services_section_service_01_title'); ?></h3>
-            <p class="info"><?php the_field('services_section_service_01_description'); ?></p>
-          </div>
-        </div>
-        <div class="i_contenu">
-          <div class="s_infolettre">
-          <h3 class="titre">Service 02 - <?php the_field('services_section_service_02_title'); ?></h3>
-          <p class="info"><?php the_field('services_section_service_02_description'); ?></p>
-        </div>
-        <div class="e_contenu">
-          <div class="s_environnement">
-          <h3 class="titre">Service 03 - <?php the_field('services_section_service_03_title'); ?></h3>
-          <p class="info"><?php the_field('services_section_service_03_description'); ?></p>
-        </div>
-        <div class="s_comite">
-          <h3 class="titre">Service 04 - <?php the_field('services_section_service_04_title'); ?></h3>
-          <p class="info"><?php the_field('services_section_service_04_description'); ?></p>
-        </div>
+
+              <!--WP QUERY 4 SERVICES-->
+              <?php
+                $arguments = array( // 👈 Tableau d'arguments
+                  'post_type' => 'service',
+                  'posts_per_page' => 4, 
+                );
+                $projects = new WP_Query($arguments); // 👈 Utilisation
+                while ($projects->have_posts()) : $projects->the_post(); 
+              ?>
+                <div class="<?php the_field('service_class01'); ?>">
+                  <div class="<?php the_field('service_class02'); ?>">
+                    <h3 class="titre"><?php the_field('service_number'); ?> - <?php the_title();?></h3>
+                    <p class="info"><?php the_field('description_courte'); ?></p>
+                  </div>
+                </div>
+
+              <?php
+                endwhile; 
+                wp_reset_postdata(); 
+              ?>
       </section>
 
       <!--SECTIONS 3 NOUVELLES -->
       <section class="actualites" style="background-image: url('<?php the_field('actuality_section_background_house'); ?>')">
         <div class="empty"></div>
-        <img class="titre_actualites" src="<?php the_field('actuality_section_title'); ?>" alt="ACTUALITÉS">
+        <img class="titre_actualites" src="<?php the_field('actuality_section_title'); ?>" alt="ACTUALITÃ‰S">
         
         <!--3 NOUVELLES EN WPQUERY-->
         <?php
-          $arguments = array( // 👈 Tableau d'arguments
+          $arguments = array( // ðŸ‘ˆ Tableau d'arguments
           'post_type' => 'new',
           'posts_per_page' => 3, 
           'orderby' => 'date',
           );
-          $projects = new WP_Query($arguments); // 👈 Utilisation
+          $projects = new WP_Query($arguments); // ðŸ‘ˆ Utilisation
           while ($projects->have_posts()) : $projects->the_post(); 
         ?>
               
@@ -141,7 +144,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
       <section class="temoignages">
         <img class="titre" src="<?php the_field('testimony_section_title_desktop'); ?>" alt="title">
         <div class="entete">
-          <h1>TÉMOIGNAGES</h1>
+          <h1>TÃ‰MOIGNAGES</h1>
           <img class="conteneur_mobile_icones" src="<?php the_field('testimony_section_title_mobile'); ?>" alt="icones">
         </div>
         <img class="desktop_icones" src="<?php the_field('testimony_section_icon_desktop'); ?>" alt="icones">
@@ -191,7 +194,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
 <?php endwhile; // Fermeture de la boucle
 
-else : // Si aucune page n'a été trouvée
+else : // Si aucune page n'a Ã©tÃ© trouvÃ©e
 	get_template_part( 'partials/404' ); // Affiche partials/404.php
 endif;
 

@@ -73,8 +73,8 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 		<div class="dropdown">
 			<div class="nouvelle_menu">Filtre</div>
 			<div class="dropdown-child">
-				<a href="#" id="recent">Plus récents</a>
-				<a href="#" id="vieux">Plus ancients</a>
+				<a href="#" id="recent"><?php the_field('more_recent')?></a>
+				<a href="#" id="vieux"><?php the_field('more_old')?></a>
 			</div>
 		</div>
 
@@ -83,7 +83,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
 		<!-- CONTENEUR TOGGLE POUR AFFICHER PLUS DE NOUVELLES -->
 		<div class="contenant_btn">
-			<button id="more" class="affichage_plus_nvs">Voir plus de nouvelles</button>
+			<button id="more" class="affichage_plus_nvs"><?php the_field('label_see_more')?></button>
 		</div>
 
 	<div>
@@ -108,7 +108,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 			}
 
 			// FETCH JSON POST TYPE NEW
-			fetch("http://localhost:81/2130100/flhlmq--webchibis/wp-json/wp/v2/new?&_embed")
+			fetch("https://web-chibis.tim-momo.com/wp-json/wp/v2/new?&_embed")
 			.then(response => response.json())
 			.then(news => {
 				console.log(news);
@@ -122,7 +122,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 							let titre = element.title.rendered
 							let description = element.content.rendered
 							let color = element.acf.categorie_color
-							let link = element.acf.link_next_news
+							let link = element.link
 							let img = element._embedded["wp:featuredmedia"][0].source_url
 							let btn = element.acf.btn_label
 
@@ -148,6 +148,100 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 					});
 
 			});
+			
+			
+			let recent = document.querySelector("#recent"); 
+			let old = document.querySelector("#vieux"); 
+			let contain = document.querySelector(".listes_nouvelles_caroussel"); 
+
+			recent.addEventListener("click", function () {
+				contain.innerHTML = "";
+				fetch("https://web-chibis.tim-momo.com/wp-json/wp/v2/new?&_embed&orderby=date&order=desc")
+				.then(response => response.json())
+				.then(news => {
+					console.log(news);
+					let maxNews = 3; 
+					let count = 0; 
+
+						// FOR EACH CARTE
+						news.forEach(element => {
+							// MAXIMUM DE CARTE COUNTER
+							if (count <= maxNews) {
+								let titre = element.title.rendered
+								let description = element.content.rendered
+								let color = element.acf.categorie_color
+								let link = element.acf.link_next_news.url
+								let img = element._embedded["wp:featuredmedia"][0].source_url
+								let btn = element.acf.btn_label
+
+								let newsHTML =
+								`
+								<div class="card">
+									<img src="${img}" class="card-image">
+									<div class="card-content">
+										<h2 class="card-title">${titre}</h2>
+										<p class="card-description">${description}</p>
+										<button class="card-button">
+										<a href="${link}">${btn}</a>
+										</button>
+									</div>
+								</div>
+								`; 
+								
+								// CONNECTION AU CONTENEUR
+								let newscontenu = document.querySelector(".listes_nouvelles_caroussel"); 
+								newscontenu.innerHTML += newsHTML; 
+								count++;
+							}; 
+						});
+
+				});
+			}); 
+
+			old.addEventListener("click", function () {
+				contain.innerHTML = ""; 
+				fetch("https://web-chibis.tim-momo.com/wp-json/wp/v2/new?&_embed&orderby=date&order=asc")
+				.then(response => response.json())
+				.then(news => {
+					console.log(news);
+					let maxNews = 3; 
+					let count = 0; 
+
+						// FOR EACH CARTE
+						news.forEach(element => {
+							// MAXIMUM DE CARTE COUNTER
+							if (count <= maxNews) {
+								let titre = element.title.rendered
+								let description = element.content.rendered
+								let color = element.acf.categorie_color
+								let link = element.acf.link_next_news.url
+								let img = element._embedded["wp:featuredmedia"][0].source_url
+								let btn = element.acf.btn_label
+
+								let newsHTML =
+								`
+								<div class="card">
+									<img src="${img}" class="card-image">
+									<div class="card-content">
+										<h2 class="card-title">${titre}</h2>
+										<p class="card-description">${description}</p>
+										<button class="card-button">
+										<a href="${link}">${btn}</a>
+										</button>
+									</div>
+								</div>
+								`; 
+								
+								// CONNECTION AU CONTENEUR
+								let newscontenu = document.querySelector(".listes_nouvelles_caroussel"); 
+								newscontenu.innerHTML += newsHTML; 
+								count++;
+							}; 
+						});
+
+				});
+			}); 
+			
 	</script>
 
 <?php endwhile; // Fermeture de la boucle

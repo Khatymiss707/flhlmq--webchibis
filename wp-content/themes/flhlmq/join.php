@@ -52,8 +52,10 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
           <label class="label_mail" for="fname"><?php the_field('form_title_title_textarea'); ?></label>
           <textarea class="input_mail" id="message" name="message" rows="10" cols="50" placeholder="<?php the_field('form_title_ecrire_ici'); ?>"></textarea><br><br>
-
-          <button class="joindre_btn" type="submit"><?php the_field('buttons_btn_labels'); ?></button>
+          
+          <a class="joindre_btn" href="<?php the_field('buttons_link_btn'); ?>">
+                        <button class="joindre_btn" type="submit"><?php the_field('buttons_btn_labels'); ?></button>
+          </a>
 
         </form>
       </div>

@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Liste des nouvelles</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+</head>
+
+<header>
+    <div class="banniere" id="banniere">
+        <p>
+            Cette page n’est qu’un projet académique qui vise à transformer un site
+            existant. Veuillez visiter le site actuel:
+        </p>
+        <div class="banniere_btn">
+            <a href="https://www.flhlmq.com/fr">
+                <button class="visiter">VISITER</button>
+            </a>
+            <button class="fermer">FERMER</button>
+        </div>
+    </div>
+</header>
+
+<body>
+
+    <div class="pageblanche">
+
+        <section class="hero">
+
+            <section class="nav">
+                <nav class="navbar">
+                    <div class="hamburger">
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                        <span class="bar"></span>
+                    </div>
+
+                    <ul class="nav_menu">
+
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">équipe</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="liste_service.html" class="nav-link">services</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="liste_nouvelles.html" class="nav-link">nouvelles</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="a_propos.html" class="nav-link">à propos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">faq</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="joindre.html" class="nav-link">nous joindre</a>
+                        </li>
+
+                        <div class="right_side_nav">
+
+                            <li class="nav-item autre">
+                                <img class="loupe" src="./medias/images/page_accueil/icones/loupe.svg" alt="loupe">
+                            </li>
+
+                            <li class="nav-item  autre">
+                                <select>
+                                    <option value="fr">FRA</option>
+                                    <option value="eng">ENG</option>
+                                </select>
+                            </li>
+                        </div>
+
+
+
+                    </ul>
+                </nav>
+            </section>
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./medias/images/page_accueil/section_hero/talismenas.jpg" alt="ciel01" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./medias/images/page_accueil/section_hero/emma_trewin.jpg" alt="ciel02" />
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./medias/images/page_accueil/section_hero/jdominici.jpg" alt="ciel03" />
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="vecteur_batiment">
+                    <img class="building01"
+                        src="./medias/images/page_accueil/section_hero/batiments_vectors/arriere_building_01.svg"
+                        alt="" />
+                    <img class="building02"
+                        src="./medias/images/page_accueil/section_hero/batiments_vectors/arriere_building_02.svg"
+                        alt="" />
+                    <img class="building03"
+                        src="./medias/images/page_accueil/section_hero/batiments_vectors/arriere_building_03.svg"
+                        alt="" />
+                </div>
+            </div>
+
+            <div class="case_transparente">
+                <h1 class="titre">
+                    La Fédération des locataire d’ habitation à loyer modique du Québec
+                </h1>
+                <div class="swiper02">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <h3 class="article_hero">Envoyez un courriel pour soutenir Alexis! Un jeune trisomique
+                                handicapé et en fin
+                                de vie ne peut même plus aller à l’extérieur puisque l’office municipal d’habitation qui
+                                gère son HLM
+                                refuse d’installer un élévateur, même si des fonds d’exception ont été débloqués à cet
+                                effet.</h3>
+                        </div>
+                        <div class="swiper-slide">
+                            <h3 class="article_hero">«Je vis dans un HLM et ça, c’est une chance que j’ai» Pour lire
+                                l'article du
+                                journal Le Soleil:
+                                https://www.lesoleil.com/actualites/actualites-locales/la-capitale/2024/09/15/la-chance-dhabiter-dans-un-hlm-5L4SZKQNHZADTEKTRYCSCWKI5M/
+                            </h3>
+                        </div>
+                        <div class="swiper-slide">
+                            <h3 class="article_hero">Pétition pour des HLM de qualité. La FLHLMQ profitera de la
+                                manifestation et du
+                                camps organisés par le FRAPRU afin de réclamer du logement social, les 14 et 15
+                                septembre, pour lancer
+                                publiquement sa pétition pour des HLM de qualité.</h3>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <img class="titre_liste_nouvelles" src="./medias/images/page_nouvelle/logo_liste_nouvelles.svg" alt="">
+
+        <div class="dropdown">
+            <div class="nouvelle_menu">Filtre</div>
+            <div class="dropdown-child">
+                <a href="#">Plus récents</a>
+                <a href="#">Plus ancients</a>
+            </div>
+        </div>
+
+        <div class="listes_nouvelles_caroussel">
+
+            <div class="card">
+                <img src="./medias/images/page_nouvelle/nouvelle01.jpg" alt="Card 1" class="card-image">
+                <div class="card-content">
+
+                    <h2 class="card-title">Envoyez un courriel pour soutenir Alexis!</h2>
+                    <p class="card-description">
+                        Un jeune trisomique handicapé et en fin de vie ne peut même plus aller à l’extérieur
+                        puisque l’office municipal d’habitation qui gère son HLM refuse d’installer un élévateur,
+                        même si des fonds d’exception ont été débloqués à cet effet. </br></br>
+                        17/09/2024- 12:03
+                    </p>
+                    <button class="card-button">En savoir plus</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./medias/images/page_nouvelle/frappu_manif.jpeg" alt="Card 2" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">« Je vis dans un HLM et ça, c’est une chance que j’ai »</h2>
+                    <p class="card-description">
+                        La FLHLMQ était présente à la grande manifestation regroupant 1 300
+                        personnes en faveur du logement social qui s'est déroulée, le 15 septembre,
+                        devant l'Assemblée nationale à Québec.</br></br>
+                        16/09/2024- 16:28
+                    </p>
+                    <button class="card-button">En savoir plus</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./medias/images/page_nouvelle/pelleter-la-neige.jpg" alt="Card 3" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">Première pelletée de terre pour Unitaînés à Rimouski</h2>
+                    <p class="card-description">
+                        Radio Canada souligne, dans un reportage du 9 septembre, la pelletée de
+                        terre officielle d'un immeuble de 100 logements réalisé par la Mission
+                        Unitaînés qui sera ensuite confié à la gestion de l'Office d'habitation
+                        Rimouski-Neigette.</br></br>
+                        10/09/2024- 09:03
+                    </p>
+                    <button class="card-button">En savoir plus</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./medias/images/page_nouvelle/abiti.jpg" alt="Card 4" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">Le mépris a assez duré!</h2>
+                    <p class="card-description">
+                        Radio Canada vient de publier un article sur la situation scandaleuse vécue à l'office
+                        d'habitation du lac Abitibi: laxisme dans la location des logements, mépris des locataires qui
+                        posent des questions, menaces contre les membres du CCR, etc.</br></br>
+                        11/09/2024- 11:41
+                    </p>
+                    <button class="card-button">En savoir plus</button>
+                </div>
+            </div>
+
+            <button class="affichage_plus_nvs">
+                Voir plus de nouvelles
+            </button>
+
+        </div>
+
+        <div id="liste_novs_deux" class="listes_nouvelles_caroussel deux">
+
+            <div class="card">
+                <img src="./medias/images/page_nouvelle/nouvelle06.jpg" alt="Card 5" class="card-image">
+                <div class="card-content">
+
+                    <h2 class="card-title">Une stratégie qui limite à 4% le nombre de logements sociaux à venir</h2>
+                    <p class="card-description">
+                        La ministre France Élaine Duranceau a présenté sa Stratégie québécoise en Habitation pour
+                        répondre à la crise du logement. Le gouvernement se donne pour cible de hausser de 45 000 à
+                        56 000 le nombre de logements réalisés chaque année au Québec pour atteindre 560 000
+                        nouvelles habitations dans dix ans. </br></br>
+                        22/08/2024 - 14:08
+                    </p>
+                    <button class="card-button">En savoir plus</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./medias/images/page_nouvelle/nouvelle07.jpg" alt="Card 6" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">Manifestons à Québec les 14 et 15 septembre</h2>
+                    <p class="card-description">
+                        Les 14 et 15 septembre prochain, le FRAPRU tiendra un Camp à Québec et une grande
+                        manifestation pour revendiquer des logements sociaux. La FLHLMQ sera présente et vous
+                        invite à participer en grand nombre à la manifestation du 15 septembre à Québec.</br></br>
+                        20/08/2024- 13:30
+                    </p>
+                    <button class="card-button">En savoir plus</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./medias/images/page_nouvelle/nouvelle08.jpeg" alt="Card 7" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">Rencontre avec Benoit Dorais</h2>
+                    <p class="card-description">
+                        La fédération a rencontré le responsable de l’habitation de la Ville de
+                        Montréal, Monsieur Benoit Dorais qui est aussi le maire de
+                        l’arrondissement du Sud-Ouest où on retrouve le plus grand parc HLM du
+                        Québec. Rappelons que l’OMHM gère plus de 20000 HLM soit 1/3 des HLM
+                        du Québec.</br></br>
+                        19/08/2024- 11:17
+                    </p>
+                    <button class="card-button">En savoir plus</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./medias/images/page_nouvelle/nouvelle09.jpeg" alt="Card 8" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">Les défis du nouveau PDG de la SHQ</h2>
+                    <p class="card-description">
+                        Le Conseil des ministres a procédé à la nomination du nouveau
+                        président-directeur général de la Société d’habitation du Québec (SHQ). M.
+                        Jean Martel deviendra PDG de la SHQ àcompterdu23septembre
+                        prochain.</br></br>
+                        16/08/2024- 10:01
+                    </p>
+                    <button class="card-button">En savoir plus</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./medias/images/page_nouvelle/nouvelle10.jpg" alt="Card 9" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">Nouveaux Horizons pour les aînés</h2>
+                    <p class="card-description">
+                        Le gouvernement fédéral vient de lancer son programme de subvention
+                        pour financer des projets pour les personnes âgées. Les associations de
+                        locataires peuvent obtenir jusqu’à 25 000 $ pour financer leurs activités. Il
+                        faut soumettre sa demande avant le 12 septembre..</br></br>
+                        16/08/2024- 09:28
+                    </p>
+                    <button class="card-button">En savoir plus</button>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="./medias/images/page_nouvelle/nouvelle05.jpg" alt="Card 10" class="card-image">
+                <div class="card-content">
+                    <h2 class="card-title">Un plan radical de construction en Angleterre</h2>
+                    <p class="card-description">
+                        En Angleterre, le nouveau gouvernement travailliste a annoncé un plan qu’il veut «radical»
+                        pour lutter contre la pénurie de logements qui frappe le pays.</br></br>
+                        21/08/2024- 11:54
+                    </p>
+                    <button class="card-button">En savoir plus</button>
+                </div>
+            </div>
+
+        </div>
+
+        <footer class="footer">
+            <div class="column1">
+                <div class="titre_footer">
+                    <div class="logo">
+                        <img src="./medias/images/logo/logo.svg" />
+                    </div>
+                </div>
+                <p class="address">
+                    2520, av. Lionel-Groulx, local 202 Montréal, (Québec)H3J 1J8
+                </p>
+                <p class="contactes">1-800-566-9662</p>
+                <div class="lien">
+                    <a href="info@flhlmq.com">info@flhlmq.com</a>
+                </div>
+                <div class="icones_reseaux">
+                    <div class="youtube">
+                        <img src="./medias/images/pied_page/icones/youtube.svg" alt="youtube" />
+                    </div>
+                    <div class="facebook">
+                        <img src="./medias/images/pied_page/icones/facebook.svg" alt="facebook" />
+                    </div>
+                </div>
+            </div>
+            <div class="column2">
+                <div class="partners">
+                    <p class="partenaires">Nos Partenaires</p>
+                    <div class="quebec">
+                        <img src="./medias/images/pied_page/quebec.svg" alt="quebec" />
+                    </div>
+                    <div class="frapru">
+                        <img src="./medias/images/pied_page/frapru.svg" alt="frapru" />
+                    </div>
+                    <div class="cnl">
+                        <img src="./medias/images/pied_page/cnl.svg" alt="cnl" />
+                    </div>
+                    <div class="rohq">
+                        <img src="./medias/images/pied_page/rohq.svg" alt="rohq" />
+                    </div>
+                </div>
+                <p class="joindre">Joindre notre organisation</p>
+                <div class="membership">
+                    <button class="membre_footer">DEVENIR MEMBRE</button>
+                </div>
+            </div>
+            <p class="credit">&copy 2024, FLHLMQ, WEB CHIBIS</p>
+        </footer>
+
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script type="module" src="./main.js"></script>
+
+</html>

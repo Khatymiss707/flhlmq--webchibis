@@ -9,6 +9,13 @@
         color: var(--blanc);
         display: grid;
         gap: 10px;    
+
+        .navigation{
+            margin-block: 5%;
+            & a{
+                text-decoration: none;
+            }
+        }
         .lien {
             a {
                 &:hover {
@@ -54,7 +61,7 @@
             text-align: center;
 
             & img {
-                width: 100%;
+                width: 70%;
             }
         }
         p {
@@ -113,8 +120,7 @@
             .column1 {
                 width: 100%;
             .logo {
-                width: 100%;
-                transform: scale(0.9);
+                width: 70%;
                 img{
                     width: 100%; 
                 }
@@ -177,9 +183,6 @@
     }
 }
 @media screen and (min-width: 768px) {
-    .logo {
-        transform: scale(0.6);
-    }
     .footer {
         width: 100%;
         padding:20px;
@@ -194,11 +197,7 @@
             padding-left: 5px;
             padding-top: 5px;
             & .logo {
-                width: 100%;
-                transform: scale(0.9);
-                img{
-                    width: 100%; 
-                    }
+                width: 50%;
             }
             .icones_reseaux {
                 display: grid;

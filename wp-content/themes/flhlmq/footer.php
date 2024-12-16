@@ -9,30 +9,47 @@
 <footer class="footer">
     <div class="column1">
         <div class="titre_footer">
-            <div class="logo">
-                <!-- scf pour image dans wp -->
+            
+            <?php
+                 $arguments = array( // 👈 Tableau d'arguments
+                 'post_type' => 'footer',
+                'posts_per_page' => 1
+                  );
+                 $projects = new WP_Query($arguments); // 👈 Utilisation
+                 while ($projects->have_posts()) : $projects->the_post(); 
+            ?>
+            
+            <a href="https://web-chibis.tim-momo.com/" class="logo">
                 <img src="<?php the_field('footerlogo'); ?>" />
-            </div>
+            </a>
+            
         </div>
-        <p class="address">
-            <?php the_field('location'); ?>
-        </p>
-        <p class="contactes">
-            <!-- scf pour texte dans wp -->
-            <?php the_field('phone_number'); ?>
-        </p>
+        
+        <?php
+                    wp_nav_menu( array(
+                    'theme_location' => 'footer',  // S'assurer de chercher main_menu pour menu principal dans l'acceuil
+                    'menu_class' => 'navigation',  // Applique classes nav_menu et etc. aux liens et nav
+                    'container' => 'a',
+                    'list_item_class' => 'nav-item',
+                    'link_item_class' => 'nav-link',
+                ));?>
+        
+        <a href="<?php the_field('google-map'); ?>">
+           <p class="address">
+                <?php the_field('location'); ?>
+            </p> 
+        </a>
+        
+        <p class="contactes"><?php the_field('phone_number'); ?></p>
         <div class="lien">
-            <!-- scf pour email dans wp -->
             <a href="info@flhlmq.com"><?php the_field('email_flhlmq'); ?></a>
         </div>
         <div class="icones_reseaux">
             <div class="youtube">
-                <!-- scf pour image dans wp -->
                 <img src="<?php the_field('mediassociaux_firstlogo'); ?>" alt="youtube" />
             </div>
 
             <div class="facebook">
-                <!-- scf pour image dans wp -->
                 <img src="<?php the_field('mediassociaux_secondlogo'); ?>" alt="facebook" />
             </div>
         </div>
@@ -40,42 +57,41 @@
     <div class="column2">
         <div class="partners">
             <p class="partenaires">
-                <!-- scf pour texte dans wp -->
                 <?php the_field('partners_titlepartners'); ?>
             </p>
             <div class="quebec">
-                <!-- scf pour image dans wp -->
                 <img src="<?php the_field('partners_logo'); ?>" alt="quebec" />
             </div>
             <div class="frapru">
-                <!-- scf pour image dans wp -->
-                <img src="<?php the_field('partners_secondlogo'); ?>" alt="frapru" />
+                <img src="<?php the_field('partners_logo2'); ?>" alt="frappu" />
             </div>
             <div class="cnl">
-                <!-- scf pour image dans wp -->
                 <img src="<?php the_field('partners_thirdlogo'); ?>" alt="cnl" />
             </div>
             <div class="rohq">
-                <!-- scf pour image dans wp -->
                 <img src="<?php the_field('partners_fourthlogo'); ?>" alt="rohq" />
             </div>
         </div>
-        <p class="joindre">
-            <!-- scf pour texte dans wp -->
-            <?php the_field('join_title'); ?>
-        </p>
+        <p class="joindre"><?php the_field('join_title'); ?></p>
         <div class="membership">
-            <button class="membre_footer">
-                <!-- scf pour texte dans wp -->
-                <?php the_field('buttons_btn_label'); ?>
-            </button>
+            <a href="<?php the_field('buttons_link_btn'); ?>">
+               <button class="membre_footer">
+                    <?php the_field('buttons_btn_label'); ?>
+                </button> 
+            </a>
+            
         </div>
     </div>
-    <!-- scf pour texte dans wp -->
     <p class="credit"><?php the_field('credits'); ?></p>
+    
+    <?php
+        endwhile; 
+        wp_reset_postdata(); 
+    ?>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="./main.js"></script>
 <script src="<?php bloginfo('template_url'); ?>"></script>
 
 <?php wp_footer(); 
