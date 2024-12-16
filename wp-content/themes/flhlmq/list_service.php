@@ -7,7 +7,7 @@
 
 get_header(); // Affiche header.php
 
-if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ? 
+if ( have_posts() ) : // Est-ce que nous avons des pages Ã  afficher ? 
 	// Si oui, bouclons au travers les pages (logiquement, il n'y en aura qu'une)
 	while ( have_posts() ) : the_post(); 
 ?>
@@ -42,11 +42,11 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
                  <!--WP QUERY  POUR DESCRIPTION COURTE DANS LE SWIPPER-->
               <?php
-                $arguments = array( // 👈 Tableau d'arguments
+                $arguments = array( // ðŸ‘ˆ Tableau d'arguments
                   'post_type' => 'service',
                   'posts_per_page' => 4, 
                 );
-                $projects = new WP_Query($arguments); // 👈 Utilisation
+                $projects = new WP_Query($arguments); // ðŸ‘ˆ Utilisation
                 while ($projects->have_posts()) : $projects->the_post(); 
               ?>
                 <div class="swiper-slide">
@@ -84,50 +84,39 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
             <div class="swiper03">
                 <div class="swiper-wrapper">
-                    <div class="swiper-slide card">
-                        <?php
-                          $arguments = array( // 👈 Tableau d'arguments
+                    <?php
+                         $arguments = array( // ðŸ‘ˆ Tableau d'arguments
                             'post_type' => 'service',
                             'posts_per_page' => 4, 
-                          );
-                          $projects = new WP_Query($arguments); // 👈 Utilisation
-                          while ($projects->have_posts()) : $projects->the_post(); 
-                        ?>
-<!--
-                        <div class="prochaine_nouvelle">
-                          <a href="<?php the_field('link_next_services');?>">
-                            <h2>
-                              <?php the_field('service-list-title'); ?>
-                            </h2>
-                          </a>
-                          <p><?php the_title(); ?></p>
-                        </div>
--->
+                         );
+                         $projects = new WP_Query($arguments); // ðŸ‘ˆ Utilisation
+                        while ($projects->have_posts()) : $projects->the_post(); 
+                    ?>
+
+                    <div class="swiper-slide card">
                         <img src="<?php the_field('service-image');?>" alt="Card 1" class="card-image">
                         <div class="card-content">
-                            <!-- scf pour texte dans wp -->
                             <a href="<?php the_field('service_url');?>">
-                            <h2>
-                              <?php the_field('service_title'); ?>
-                            </h2>
-                          </a>
+                                <h2 class="card-title">
+                                    <?php the_field('service_title'); ?>
+                                </h2>
+                            </a>
                             <p class="card-description">
-                                <!-- scf pour texte dans wp -->
                                 <?php the_field('description_courte'); ?>
                             </p>
                             <a href="<?php the_field('present-services-label'); ?>">
-                                <button class="card-button">
-                                    <!-- scf pour texte dans wp -->
-                                    <?php the_field('present-services-label'); ?>
-                                </button>
-                            </a>
-                            
+                                    <button class="card-button">
+                                        <!-- scf pour texte dans wp -->
+                                        <?php the_field('present-services-label'); ?>
+                                    </button>
+                                </a>
                         </div>
+                    </div>
+                    <?php
+                        endwhile; 
+                        wp_reset_postdata(); 
+                    ?>
 
-                        <?php
-                          endwhile; 
-                          wp_reset_postdata(); 
-                        ?>
                 </div>
             </div>
 
@@ -137,7 +126,7 @@ if ( have_posts() ) : // Est-ce que nous avons des pages à afficher ?
 
 <?php endwhile; // Fermeture de la boucle
 
-else : // Si aucune page n'a été trouvée
+else : // Si aucune page n'a Ã©tÃ© trouvÃ©e
 	get_template_part( 'partials/404' ); // Affiche partials/404.php
 endif;
 

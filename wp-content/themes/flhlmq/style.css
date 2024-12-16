@@ -386,7 +386,7 @@ a {
     gap: 10px;
   }
   .footer .navigation {
-    margin-block: 4%;
+    margin-block: 5%;
   }
   .footer .lien a:hover {
     color: var(--pomme-verte);
@@ -485,8 +485,7 @@ a {
     width: 100%;
   }
   .footer .column1 .logo {
-    width: 100%;
-    transform: scale(0.9);
+    width: 70%;
   }
   .footer .column1 .logo img {
     width: 100%;
@@ -542,9 +541,6 @@ a {
   }
 }
 @media screen and (min-width: 768px) {
-  .logo {
-    transform: scale(0.6);
-  }
   .footer {
     width: 100%;
     padding: 20px;
@@ -561,11 +557,7 @@ a {
     padding-top: 5px;
   }
   .footer .column1 .logo {
-    width: 100%;
-    transform: scale(0.9);
-  }
-  .footer .column1 .logo img {
-    width: 100%;
+    width: 50%;
   }
   .footer .column1 .icones_reseaux {
     display: grid;
@@ -847,6 +839,13 @@ a {
   overflow: hidden;
 }
 
+.footer .navigation {
+  margin-block: 2.5%;
+}
+.footer .logo img {
+  width: 30vh;
+}
+
 .hero {
   position: relative;
   width: 100%;
@@ -1036,8 +1035,6 @@ a {
   align-items: center;
 }
 .service_comite p {
-  margin-left: 8%;
-  align-self: flex-start;
   color: var(--noir);
   max-width: 85%;
   text-align: justify;
@@ -1058,20 +1055,15 @@ a {
   margin-top: 3%;
 }
 .service_comite a {
-  margin-left: 8%;
-  margin-top: 2%;
   display: flex;
   color: var(--bleu-calypso);
   font-size: 22px;
   font-weight: 700;
-  align-self: flex-start;
 }
 .service_comite a.document_agir {
   margin-bottom: 3%;
 }
 .service_comite .page_comite_suivant {
-  display: flex;
-  flex-direction: column;
   background-color: var(--bleu-calypso);
   padding: 5%;
   max-width: 80vw;
@@ -1088,11 +1080,9 @@ a {
   width: 80%;
 }
 .service_comite .page_comite_suivant .service_suivant_infolettre_titre {
-  align-self: flex-end;
   font-size: 22px;
 }
 .service_comite .page_comite_suivant .service_suivant_infolettre_para {
-  align-self: flex-end;
   font-size: 18px;
 }
 .service_comite .page_comite_suivant:hover {
@@ -3055,7 +3045,7 @@ a {
   .infolettre .souris_icone {
     width: 3vw;
     position: absolute;
-    transform: translateY(-400%);
+    transform: translateY(-140%);
     right: 10%;
   }
   .liste_service_page {

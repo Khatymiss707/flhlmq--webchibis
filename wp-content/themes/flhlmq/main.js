@@ -20,6 +20,18 @@ const swiper02 = new Swiper('.swiper02', {
   },
 });
 
+//Page_liste_service_swiper
+var swiper03 = new Swiper(".swiper03", {
+  loop: true,
+  spaceBetween: 0,
+  slidesPerView: 1, // Show 1 card at a time
+  centeredSlides: true,
+  pagination: {
+    el: ".swiper-pagination",
+    type: "progressbar",
+  },
+});
+
 //burger toggle
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav_menu");
@@ -45,17 +57,7 @@ $title.click(function () {
 });
 
 
-//Page_liste_service_swiper
-var swiper03 = new Swiper(".swiper03", {
-  loop: true,
-  spaceBetween: 0,
-  slidesPerView: 1, // Show 1 card at a time
-  centeredSlides: true,
-  pagination: {
-    el: ".swiper-pagination",
-    type: "progressbar",
-  },
-});
+
 
 
 //gsap background parrallax
