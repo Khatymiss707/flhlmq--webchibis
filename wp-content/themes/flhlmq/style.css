@@ -388,6 +388,9 @@ a {
   .footer .navigation {
     margin-block: 5%;
   }
+  .footer .navigation a {
+    text-decoration: none;
+  }
   .footer .lien a:hover {
     color: var(--pomme-verte);
   }

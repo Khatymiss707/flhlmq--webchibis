@@ -12,6 +12,9 @@
 
         .navigation{
             margin-block: 5%;
+            & a{
+                text-decoration: none;
+            }
         }
         .lien {
             a {
